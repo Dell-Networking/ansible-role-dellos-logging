@@ -1,9 +1,7 @@
 #jinja2: trim_blocks: True,lstrip_blocks: True
 {#############################################
-
 Purpose:
 Configure logging commands for dellos10 Devices
-
 dellos_logging:
   logging:
     - ip: 1.1.1.1
@@ -14,8 +12,6 @@ dellos_logging:
   log_file:
     enable: True
     severity: log-err
-
-
 ###############################################}
 {% if dellos_logging is defined and dellos_logging %}
   {% for key,value in dellos_logging.iteritems() %}

@@ -1,6 +1,5 @@
 ---
 # vars file for Dell-Networking.dellos-logging, below gives a sample configuration
-
 # Sample variables for dellos9 device
 dellos_logging:
     logging:
@@ -59,4 +58,3 @@ dellos_logging:
     log_file:
       enable: True
       severity: log-err
-
