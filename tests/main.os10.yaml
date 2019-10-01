@@ -1,0 +1,13 @@
+---
+# vars file for Dell-Networking.dellos-logging, below gives a sample configuration
+# Sample variables for dellos10 device
+dellos_logging:
+    logging:
+      - ip: 1.1.1.1
+        state: absent
+    console:
+      enable: True
+      severity: log-err
+    log_file:
+      enable: True
+      severity: log-err
