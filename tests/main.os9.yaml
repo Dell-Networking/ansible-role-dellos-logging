@@ -40,3 +40,4 @@ dellos_logging:
          all: true
          unit_num: 5
          state: present
+    source_interface: "fortyGigE 1/9"

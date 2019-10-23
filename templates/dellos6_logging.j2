@@ -6,6 +6,7 @@ dellos_logging:
     logging:
       - ip: 1.1.1.1
         state: absent
+    source_interface: "vlan 30"
 #####################################}
 {% if dellos_logging is defined and dellos_logging %}
 
@@ -21,6 +22,12 @@ exit
         {% endif %}
       {% endif %}
     {% endfor %}
+  {% elif key == "source_interface" %}
+      {% if value %}
+logging source-interface {{ value }}
+      {% else %}
+no logging source-interface
+      {% endif %}
   {% endif %}
 {% endfor %}
 {% endif %}

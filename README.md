@@ -60,6 +60,7 @@ Role variables
 | ``coredump.stackunit.all`` | boolean | Enables a coredump on all stack-units  | dellos9 |
 | ``coredump.stackunit.unit_num`` | integer | Specifies the stack-unit number (0 to 5) | dellos9 |
 | ``coredump.stackunit.state`` | string: present,absent\*| Deletes the stack-unit coredump if set to absent | dellos9 |
+| ``source_interface`` | string | Configures the source interface for logging | dellos6, dellos9, dellos10 |
 
 > **NOTE**: Asterisk (_*_) denotes the default value if none is specified. 
 
@@ -145,6 +146,7 @@ This example uses the *dellos-logging* role to completely set up logging servers
           all: true
           unit_num: 5
           state: present
+     source_interface: "fortyGigE 1/9"
 
 **Simple playbook to setup logging - leaf.yaml**
 

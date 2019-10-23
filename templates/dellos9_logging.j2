@@ -41,6 +41,7 @@ dellos_logging:
          all: true
          unit_num: 5
          state: present
+    source_interface: "fortyGigE 1/3"
 ###################################################}
 {% if dellos_logging is defined and dellos_logging %}
 {% for key,value in dellos_logging.iteritems() %}
@@ -64,6 +65,13 @@ logging monitor {{ value }}
     {% else %}
 no logging monitor
     {% endif %}
+
+  {% elif key == "source_interface" %}
+      {% if value %}
+logging source-interface {{ value }}
+      {% else %}
+no logging source-interface
+      {% endif %}
 
   {% elif key == "version" %}
     {% if value %}
