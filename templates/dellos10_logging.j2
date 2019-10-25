@@ -12,6 +12,7 @@ dellos_logging:
   log_file:
     enable: True
     severity: log-err
+  source_interface: "ethernet1/1/30"
 ###############################################}
 {% if dellos_logging is defined and dellos_logging %}
   {% for key,value in dellos_logging.iteritems() %}
@@ -54,6 +55,12 @@ logging console severity {{ value.severity }}
           {% else %}
 no logging console severity
           {% endif %}
+        {% endif %}
+    {% elif key == "source_interface" %}
+        {% if value %}
+logging source-interface {{ value }}
+        {% else %}
+no logging source-interface
         {% endif %}
     {% endif %}
   {% endfor %}
